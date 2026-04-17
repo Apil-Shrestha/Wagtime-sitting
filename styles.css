@@ -95,6 +95,25 @@ ul {
   
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+    background-color: #ffcc80;
+}
+
 /* ====================================
    Section Base Styles
    ==================================== */
@@ -968,6 +987,14 @@ ul {
    Mobile Responsive Design
    ==================================== */
 @media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
     .section {
         padding: 80px 1rem 40px;
     }
