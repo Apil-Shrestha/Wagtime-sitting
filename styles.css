@@ -78,7 +78,8 @@ ul {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: clamp(0.5rem, 2vw, 2rem);
+    flex-wrap: wrap;
 }
 
 .nav-links li a {
@@ -99,8 +100,8 @@ ul {
    Section Base Styles
    ==================================== */
 .section {
-    min-height: 100vh;
-    padding: 120px 2rem 60px;
+    min-height: auto;
+    padding: clamp(70px, 10vw, 120px) clamp(0.75rem, 3vw, 2rem) clamp(30px, 5vw, 60px);
 }
 
 .section-container {
@@ -120,7 +121,7 @@ ul {
 }
 
 .section-title {
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 5vw, 2.8rem);
     margin-bottom: 1rem;
     position: relative;
     display: inline-block;
@@ -139,7 +140,7 @@ ul {
 }
 
 .section-subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     color: #8d6e63;
     margin-top: 1rem;
 }
@@ -176,21 +177,21 @@ ul {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: clamp(1.8rem, 8vw, 4rem);
     color: #5d4037;
     margin-bottom: 1rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .hero-tagline {
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 4vw, 1.8rem);
     color: #ff7043;
     font-style: italic;
     margin-bottom: 2rem;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     color: #6d4c41;
     margin-bottom: 2rem;
 }
@@ -201,16 +202,17 @@ ul {
 
 .hero-buttons {
     display: flex;
-    gap: 1.5rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
     justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 3rem;
 }
 
 .btn {
-    padding: 1rem 2.5rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.5rem);
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -240,7 +242,8 @@ ul {
 .hero-stats {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: clamp(1rem, 3vw, 4rem);
+    flex-wrap: wrap;
 }
 
 .stat-item {
@@ -249,7 +252,7 @@ ul {
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight: 700;
     color: #ff7043;
 }
@@ -287,8 +290,8 @@ ul {
 
 .breed-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .cat-grid {
@@ -302,7 +305,7 @@ ul {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     position: relative;
-    min-height: 500px;
+    min-height: clamp(350px, 60vw, 500px);
 }
 
 .breed-card:hover {
@@ -328,7 +331,7 @@ ul {
 }
 
 .breed-image {
-    height: 230px;
+    height: clamp(120px, 30vw, 230px);
     position: relative;
     overflow: hidden;
 }
@@ -399,11 +402,11 @@ ul {
 
 
 .breed-info {
-    padding: 1.5rem;
+    padding: clamp(0.8rem, 2vw, 1.5rem);
 }
 
 .breed-name {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     margin-bottom: 1rem;
     color: #5d4037;
 }
@@ -454,7 +457,7 @@ ul {
 
 /* Cat card specific styles */
 .cat-card .breed-image {
-    height: 230px;
+    height: clamp(120px, 30vw, 230px);
 }
 
 /* ====================================
@@ -506,8 +509,8 @@ ul {
 
 .stray-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
     margin-bottom: 3rem;
 }
 
@@ -552,8 +555,8 @@ ul {
 
 .subsection-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .subsection-card {
@@ -661,8 +664,8 @@ ul {
 
 .care-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .care-card {
@@ -729,8 +732,8 @@ ul {
 
 .training-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .training-item {
@@ -763,8 +766,8 @@ ul {
 
 .vet-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
     margin-bottom: 3rem;
 }
 
@@ -887,7 +890,7 @@ ul {
 .emergency-contacts {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: clamp(1rem, 2vw, 3rem);
     flex-wrap: wrap;
 }
 
@@ -913,8 +916,8 @@ ul {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .footer-section h3 {
