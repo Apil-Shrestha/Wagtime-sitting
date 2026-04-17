@@ -82,6 +82,10 @@ ul {
     gap: 2rem;
 }
 
+.nav-toggle {
+    display: none;
+}
+
 .nav-links li a {
     color: #fff;
     font-weight: 500;
@@ -1005,6 +1009,10 @@ ul {
    Mobile Responsive Design
    ==================================== */
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
     .nav-links {
         display: none;
         position: absolute;
@@ -1021,7 +1029,7 @@ ul {
         z-index: 100;
     }
 
-    .nav-links.open {
+    .nav-toggle:checked ~ .nav-links {
         display: flex;
     }
 
