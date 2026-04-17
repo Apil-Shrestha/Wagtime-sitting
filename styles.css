@@ -57,6 +57,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .nav-brand {
@@ -264,6 +265,23 @@ ul {
 
 .stat-item {
     text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 112, 67, 0.1);
+    border-radius: 10px;
+}
+
+.stat-item:hover .stat-number {
+    color: #ff5722;
 }
 
 .stat-number {
@@ -989,6 +1007,39 @@ ul {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 1rem;
+        left: auto;
+        width: min(280px, 90%);
+        flex-direction: column;
+        gap: 0.75rem;
+        background: linear-gradient(135deg, #5d4037 0%, #795548 100%);
+        padding: 1rem 1.25rem 1.25rem;
+        border-radius: 18px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+        z-index: 100;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li a {
+        color: #fff;
+        background: rgba(130, 69, 0, 0.08);
+        padding: 0.8rem 1rem;
+        border-radius: 18px;
+        font-size: 0.95rem;
+    }
+
+    .nav-links li a:hover {
+        background: rgba(255, 255, 255, 0.16);
+        color: #ffcc80;
+    }
+
+    .nav-links li + li {
+        margin-top: 0.4rem;
     }
 
     .hamburger {
@@ -1090,6 +1141,13 @@ ul {
     .hero-stats {
         gap: 2rem;
         flex-wrap: wrap;
+    }
+
+    .stat-item {
+        padding: 0.8rem 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 112, 67, 0.2);
+        border-radius: 8px;
     }
 
     .emergency-contacts {
@@ -1219,20 +1277,46 @@ ul {
 
     .hero-stats {
         gap: 1rem;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     .stat-item {
-        width: 100%;
+        width: auto;
+        padding: 0.8rem 1rem;
+        cursor: pointer;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 112, 67, 0.3);
+        margin: 0.5rem;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .stat-label {
         font-size: 0.8rem;
+    }
+      
+    }
+
+    .stat-item:hover {
+        background: rgba(255, 112, 67, 0.2);
+        border-color: rgba(255, 112, 67, 0.6);
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
     }
 
     .emergency-box {
@@ -1255,4 +1339,4 @@ ul {
     .emergency-item {
         padding: 0.75rem 1.5rem;
     }
-}
+
